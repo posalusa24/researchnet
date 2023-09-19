@@ -1,0 +1,85 @@
+# core: core to dist subnets
+
+en
+config t
+int g1/0/11
+no switchport
+ip address 192.168.3.1 255.255.255.252
+int g1/0/12
+no switchport
+ip address 192.168.3.5 255.255.255.252
+int g1/0/13
+no switchport
+ip address 192.168.2.9 255.255.255.252
+int g1/0/14
+no switchport
+ip address 192.168.2.13 255.255.255.252
+
+# area1dist0: core to dist subnets + dist to access vlans
+
+en
+config t
+hostname area1dist0
+ip routing
+
+int g1/0/1
+no switchport
+ip address 192.168.2.2 255.255.255.252
+int g1/0/2
+no switchport
+ip address 192.168.2.10 255.255.255.252
+
+int range g1/0/11-13
+switchport mode trunk
+
+int vlan 30
+ip address 192.168.30.1 255.255.255.0
+
+# area1dist1: core to dist subnets + dist to access vlans
+
+en
+config t
+int g1/0/1
+no switchport
+ip address 192.168.2.6 255.255.255.252
+int g1/0/2
+no switchport
+ip address 192.168.2.14 255.255.255.252
+
+# area1switch2
+
+en
+config t
+hostname area1switch2
+
+vlan 30
+
+int range g0/1-2
+switchport mode trunk
+
+int f0/1
+switchport mode access
+switchport access vlan 30
+
+# dist ospf
+
+ip routing
+router ospf 10
+network 192.168.2.12 0.0.0.3 area 0
+network 192.168.2.4 0.0.0.3 area 0
+network 192.168.30.0 0.0.0.255 area 0
+
+# core ospf
+
+ip routing
+router ospf 10
+network 192.168.2.8 0.0.0.3 area 0
+network 192.168.2.12 0.0.0.3 area 0
+
+# core vlan
+
+en
+config t
+vlan 100
+int vlan 100
+ip add 192.168.100.3 255.255.255.0

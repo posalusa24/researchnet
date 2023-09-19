@@ -1,0 +1,31 @@
+# TODO
+
+* 
+
+* research organizational structures (for software houses < service providers (contemporary))
+
+# iter 2
+
+contemporary structure
+matrix?
+
+3 main networks
+* network 1: cross-team (central) developer's data sharing
+* network 2: management (payroll, hr, etc.) support
+* temporary (VLAN): in-team developer's data sharing
+
+* project 1: sme assets management
+  * software developers
+* etc
+
+* project 2: 
+
+# iter 1
+
+departments:
+* operations: development
+* support: r&d
+* support: hr
+* support: accounting
+
+

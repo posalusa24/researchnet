@@ -1,0 +1,48 @@
+# key points
+
+* firewall blocks incoming packets
+
+# improvements
+
+* ospf authentication
+* add NAT
+
+# essay
+
+## Part – A Designing the network
+
+Topology used
+
+The network architecture follows Cisco's recommendation of a traditional 3-tier hierarchical network architecture.
+It is a design framework used to create scalable, modular, and efficient network infrastructures.
+
+The hierarchy consists of these layers:
+
+* access layer: The bottom layer of the hierarchy, closest to end-user devices.
+Responsible for connecting end-user devices such as computers, phones, and printers to the network.
+* distribution layer: The middle layer that acts as an aggregation point for traffic from the access layer and provides routing, filtering, and policy-based connectivity.
+* core layer: The topmost layer responsible for high-speed, high-capacity forwarding of data.
+
+This allows for the following benefits in our network:
+
+    Scalability: Allows for the easy addition of access switches and devices in the access layer without impacting core and distribution layers.
+
+    Modularity: Each layer performs specific functions, making it easier to upgrade or replace components without affecting the entire network.
+
+    Hierarchical Design: Provides a clear separation of duties between layers, improving network organization and troubleshooting capabilities.
+
+    Redundancy: The architecture supports redundancy and fault tolerance, ensuring network reliability.
+
+    Security: Security policies can be implemented at multiple levels, including the access layer, to control user access and network traffic.
+
+    Optimized Traffic Flow: Optimizes the flow of network traffic, reducing unnecessary traffic between layers.
+
+Cisco's three-tier hierarchical network architecture is widely used in enterprise networks and data centers to create robust and scalable network infrastructures capable of meeting the demands of modern businesses and applications.
+
+In addition, our network is has a fully-meshed star topology, with redundant links and aggregated ports. By meshing at least two of the same device type, we can ensure operation when one device goes down.
+
+## Devices used
+
+### Multilayer switches
+
+
